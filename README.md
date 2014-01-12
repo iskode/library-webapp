@@ -1,4 +1,4 @@
 library-webapp
 ==============
 
-This is a webapp that help manage a library services.
+A managing system for a library services.
