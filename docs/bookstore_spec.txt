@@ -1,0 +1,12 @@
+Library Management Webapp
+
+This is a webapp that help manage a bookstore services.
+
+A Library contains books ranging by categories.
+Anyone can browse categories and books infos in the webapp.
+The webapp allows visitors to sign up on the webapp and borrow books.
+
+1st Iteration
+	User stories :
+		1. the homepage presents the library and its main categories
+		2. A category contains a list of books
