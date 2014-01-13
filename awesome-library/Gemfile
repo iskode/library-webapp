@@ -4,19 +4,16 @@ source 'https://rubygems.org'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# See https://github.com/sstephenson/execjs#readme for more supported ruby_platformntimes
-gem 'therubyracer', platforms: :ruby
+
+gem 'therubyracer', platforms: :ruby  # See https://github.com/sstephenson/execjs#readme for more supported ruby_platformntimes
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 1.2'# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'rails', '4.0.2'
-# Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.2'
-# Use unicorn as the app server
-gem 'unicorn'
+gem 'bcrypt-ruby', '~> 3.1.2'# Use ActiveModel has_secure_password
+gem 'unicorn'# Use unicorn as the app server
 gem 'thin'
 
 group :test, :development do
@@ -27,6 +24,8 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'awesome_print'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber'
   gem 'capybara'
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard-rspec'
