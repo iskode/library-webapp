@@ -15,6 +15,7 @@ gem 'rails', '4.0.2'
 gem 'bcrypt-ruby', '~> 3.1.2'# Use ActiveModel has_secure_password
 gem 'unicorn'# Use unicorn as the app server
 gem 'thin'
+gem 'devise'
 
 group :test, :development do
   gem 'debugger'
