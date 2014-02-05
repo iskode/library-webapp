@@ -6,7 +6,7 @@ Feature: Subscription
 
   Scenario: Successful subscription
     When a user fills the subscription form correctly
-    Then he should see "Successful subscription"
+    Then he should see a confirmation message
 
   Scenario: Subscription uncompleted
     When a user tries to subscribe without its name
