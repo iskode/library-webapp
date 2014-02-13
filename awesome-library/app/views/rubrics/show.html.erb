@@ -1,0 +1,12 @@
+<h1>Rubric details</h1>
+
+<p>Name: <%= @rubric.name %> </p>
+<p>Description: <%= @rubric.description %></p>
+
+
+<% @books.each do |b| %>
+    <p>
+        <%= b.title %>
+        <%= b.author %>
+    </p>
+<% end %>

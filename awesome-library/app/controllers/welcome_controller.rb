@@ -1,5 +1,10 @@
+require 'rubric'
+
 class WelcomeController < ApplicationController
   def index
-    puts "Welcome to Awesome Library!"
+
+    @rubric_names = Rubric.names
+    @message = "Welcome to Awesome Library!"
+
   end
 end

@@ -1,24 +1,25 @@
 <h2>Sign up</h2>
 
+<h5><%= @notice %></h5>
+
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   
-<div><%= f.label :name%><br />
-  <%= f.text_field :name, { :value => "Name", :autofocus => true } %> </div>
+  <div>
+    <%= f.text_field :name, { :placeholder => "Name", :autofocus => true } %> </div>
 
-  <div><%= f.label :profession %><br />
-  <%= f.text_field :profession, { :value => "Profession", :autofocus => true } %> </div>
+  <div>
+    <%= f.email_field :email, { :placeholder => "you@contact.com", :autofocus => true } %> </div>
 
-  <div><%= f.label :email %><br />
-    <%= f.email_field :email, { :value => "Email", :autofocus => true } %> </div>
+  <div>
+      <%= f.text_field :profession, { :placeholder => "Profession", :autofocus => true } %> </div>
+  <div>
+    <%= f.password_field :password, {:placeholder => "Password" } %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password, :value => "Password" %></div>
+  <div>
+    <%= f.password_field :password_confirmation, { :placeholder => "Password confirmation"} %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation, :value => "Password confirmation" %></div>
-
-  <div><%= f.submit "Subscribe" %></div>
+  <div><%= f.submit "Save" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>

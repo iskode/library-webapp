@@ -7,4 +7,5 @@ Feature: Library presentation
   Scenario: awesome library homepage
     Given the existence of some rubrics
     Then I should see them on the homepage
+
   

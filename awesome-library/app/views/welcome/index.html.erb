@@ -1,2 +1,7 @@
 <h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<p> <%= @message %> </p>
+
+<% @rubric_names.each do |n| %>
+    <p><%=n %> </p>
+<% end %>
+<a href=<%=new_user_registration_path %> >Sign up</a>
