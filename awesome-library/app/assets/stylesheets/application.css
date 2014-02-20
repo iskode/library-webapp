@@ -9,5 +9,39 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap.min
  *= require_tree .
+ *
  */
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+
+        display: inline-block;
+        float: none;
+    }
+
+    h1{
+        font-style:italic;
+        text-align: center;
+    }
+
+
+    nav{
+        height: 200px;
+        background-image:url("thu-vien.jpg") ;
+        text-emphasis-color: red;
+    }
+
+    .modal-footer  {
+        background-color: #999999
+    }
+    .navbar-inverse  {
+        margin-top: 110px;
+        border-radius: 1em;
+
+        text-align: center;
+    }
+
+}
+
