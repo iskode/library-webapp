@@ -1,7 +1,39 @@
-<h1>Welcome#index</h1>
-<p> <%= @message %> </p>
+  <p><%=@message %></p>
+  <div class="col-xs-10">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Rubrics</div>
 
-<% @rubric_names.each do |n| %>
-    <p><%=n %> </p>
-<% end %>
-<a href=<%=new_user_registration_path %> >Sign up</a>
+      <div class="panel-body">
+        <div class="row">
+          <% @rubrics.each do |r| %>
+              <div class="col-lg-4">
+                <div class="thumbnail">
+                  <a href=<%="/rubrics/#{r.id}" %>>
+                    <img alt=<%="#{r.name} "+"image" %>
+                         src="http://businessworksconsulting.com/wp-content/uploads/2013/03/Business-Development-Consultant-1_21061620_std.jpg" />
+                  </a>
+                  <div class="caption">
+                    <a href=<%="/rubrics/#{r.id}" %>>
+                      <h3><%="#{r.name}" %></h3>
+                    </a>
+                    <p><%="#{r.description}" %>This is a description of a rubric</p>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-xs-2">
+    <%= render :partial => 'layouts/search_book_form' %>
+  </div>
+
+
+
+
+
+
+
+

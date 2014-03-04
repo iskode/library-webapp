@@ -3,7 +3,8 @@ require 'rubric'
 class WelcomeController < ApplicationController
   def index
 
-    @rubric_names = Rubric.names
+    @rubrics = Rubric.all
+
     @message = "Welcome to Awesome Library!"
 
   end

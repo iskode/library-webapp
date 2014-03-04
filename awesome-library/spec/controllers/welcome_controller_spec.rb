@@ -10,7 +10,7 @@ describe WelcomeController do
     end
 
     it "shows all rubrics" do
-      expect(Rubric).to receive(:names)
+      expect(Rubric).to receive(:all)
       controller.index
     end
 

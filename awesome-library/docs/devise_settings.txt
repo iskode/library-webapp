@@ -7,7 +7,17 @@
 7. model customization if needed to match form fields:
    rails generate migration AddFieldsToModel field1:string field2:decimal ...
 8. rake db:migrate 
-9.
-10.
-11.
+9. Adding the following in application_controller (lazy and dirty way - polluted app):
+	before_filter :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :field1 << :field2 << ...
+  end
+10. Adding in Model class: attr_acessor :field1, :field2, ...
+11. Customizing views. Now I'm just carrying the sign_up process so views/devise/registrations/new
+    by adding the new field in the form, dont forget in  form_for ... do |f| {...}, the f doesn't stand
+		for the resource's type, so check f.text_field, f.password_field, f.email_field.
+
 

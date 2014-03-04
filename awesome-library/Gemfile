@@ -7,7 +7,7 @@ source 'https://rubygems.org'
 
 gem 'therubyracer', platforms: :ruby  # See https://github.com/sstephenson/execjs#readme for more supported ruby_platformntimes
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+#gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -21,6 +21,8 @@ group :test, :development do
   gem 'debugger'
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'ZenTest'
+  gem 'autotest'
   gem 'pry'
   gem 'factory_girl_rails'
   gem 'database_cleaner'

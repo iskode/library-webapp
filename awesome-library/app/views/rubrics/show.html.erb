@@ -1,12 +1,46 @@
-<h1>Rubric details</h1>
+<h1><%= @rubric.name %> rubric</h1> </br>
 
-<p>Name: <%= @rubric.name %> </p>
-<p>Description: <%= @rubric.description %></p>
+<!--Description panel-->
 
+<div class="col-xs-10">
 
-<% @books.each do |b| %>
-    <p>
-        <%= b.title %>
-        <%= b.author %>
-    </p>
-<% end %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Description</div>
+    <div class="panel-body">
+      <p><%= @rubric.description %></p>
+    </div>
+  </div>
+  <!--books panel-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Books</div>
+        <div class="panel-body">
+          <table class="table table-striped table-bordered table-condensed">
+            <thead >
+                <tr class="alert-info">
+                  <th>Name</th>
+                  <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% @books.each do |b| %>
+                    <tr>
+                      <td><a href=<%="rubrics/#{@rubric.id}/books/#{b.id}" %>><%= b.title %></a></td>
+                      <td><%= b.author %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="col-xs-2">
+  <%= render :partial => 'layouts/search_book_form' %>
+</div>

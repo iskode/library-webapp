@@ -3,4 +3,11 @@
 3. rails g devise:install
 4. rake db:migrate
 5. rake db:test:prepare
-6. 
+6. rails generate devise:views # as basis for customization
+7. model customization if needed to match form fields:
+   rails generate migration AddFieldsToModel field1:string field2:decimal ...
+8. rake db:migrate 
+9.
+10.
+11.
+

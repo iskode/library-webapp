@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Awesome Library</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% flash.each do |name, message| %>
-  <p class="alert alert-<%= name %>"><%= message %></p>
-<% end %>
-<%= yield %>
+    <head>
+      <title>Awesome Library</title>
+      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= csrf_meta_tags %>
+    </head>
 
-</body>
+    <body>
+        <header>
+          <%= render :partial => 'layouts/header' %>
+        </header>
+
+        <% flash.each do |name, message| %>
+          <p class="alert alert-<%= name %>"><%= message %></p>
+        <% end %>
+        <div class="container">
+            <div class="row">
+            <!--Rubrics panel-->
+              <%= yield %>
+          </div>
+
+        </div>
+
+
+
+        <footer>
+          <%= render :partial => 'layouts/footer' %>
+        </footer>
+    </body>
 </html>
