@@ -1,0 +1,7 @@
+<%= form_for(@rubric, :as => :rubric, :url => rubric_path(@rubric), :html => { :method => :put }) do |f| %>
+
+    <div><%= f.label :description %><br />
+      <%= f.text_field :description, :autofocus => true %></div>
+
+    <div><%= f.submit "Save" %></div>
+<% end %>
