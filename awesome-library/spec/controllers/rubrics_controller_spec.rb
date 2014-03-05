@@ -4,19 +4,15 @@ describe RubricsController do
 
 
   describe '#show' do
-
-    before(:each) do
-      assigns(:rubric).stub(:books)
-      Rubric.stub(:find)
-    end
-
     it "returns http success and show template" do
+      Rubric.stub(:find)
+      assigns(:rubric).stub(:books)
       get 'show', {id: 1}
       expect(response).to be_success
       expect(response).to render_template 'show'
     end
 
-    it 'loads requested rubric ant its books' do
+    it 'loads the rubric ant its books' do
       expect(Rubric).to receive(:find)
       expect(assigns(:rubric)).to receive(:books)
       controller.show
@@ -40,14 +36,24 @@ describe RubricsController do
 
   describe '#update' do
 
-    it "returns http success and show template" do
-      get 'update', {id: 1}
+    it "redirects to rubric#show" do
+      Rubric.stub(:find)
+      controller.stub(:rubric_params)
+      assigns(:rubric).stub(:update_attributes!)
+      put 'update', {id: 1}
       expect(response).to redirect_to rubric_path(1)
     end
 
-    it '' do
-
+    it 'saves changes' do
+      expect(Rubric).to receive(:find)
+      expect(controller).to receive(:rubric_params)
+      expect(assigns(:rubric)).to receive(:update_attributes!)
+      put 'update', {id: 1}
+      #controller.send(:update)
     end
   end
+
+
+  #def common_http_ops(request_name, )
 
 end

@@ -10,7 +10,15 @@ class RubricsController < ApplicationController
   end
 
   def update
-
+    @rubric = Rubric.find params[:id]
+    @rubric.update_attributes! rubric_params
     redirect_to rubric_url(params[:id])
+  end
+
+
+  private
+
+  def rubric_params
+    params.require(:rubric).permit(:description)
   end
 end

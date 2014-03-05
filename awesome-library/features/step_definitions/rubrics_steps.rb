@@ -27,7 +27,9 @@ When /^I change its description$/ do
   click_button 'Save'
 end
 
-#Then /^I should see the new description$/ do
-#
-#end
+Then /^I should see the new description$/ do
+  visit rubric_path @rubric
+  page.should have_text @new_description
+  page.should_not have_text @rubric.description
+end
 
