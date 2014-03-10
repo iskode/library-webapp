@@ -1,6 +1,17 @@
+Given /^the existence of some rubrics$/ do
+  @rubrics = ["Sciences", "History", "Sociology"]
+  @rubrics.each { |r| Rubric.create(name:  r, description: "This rubric gathers books about #{r}") }
+end
+
+Then /^I should see them on the homepage$/ do
+  visit '/'
+  @rubrics.each {|r|  page.should have_text r}
+end
+
 Given /^an existing rubric$/ do
   @rubric = Rubric.create(name: 'Literacy', description: 'This rubric gathers books about literacy')
 end
+
 
 Given /^some books belonging to a rubric$/ do
   step "an existing rubric"
@@ -20,16 +31,17 @@ Then /^Anyone should see these books$/ do
   end
 end
 
-When /^I change its description$/ do
+When /^I change the rubric description$/ do
   visit edit_rubric_path @rubric
+  @old_description =  @rubric.description
   @new_description =  'Wow!! Awesome book of literacy'
   fill_in 'rubric_description', with: @new_description
   click_button 'Save'
 end
 
-Then /^I should see the new description$/ do
+Then /^description must be updated$/ do
   visit rubric_path @rubric
   page.should have_text @new_description
-  page.should_not have_text @rubric.description
+  page.should_not have_text @old_description
 end
 
